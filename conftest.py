@@ -17,7 +17,6 @@ def setup(browser):
         # chrome_options.add_argument("--disable-dev-shm-usage")
         # chrome_options.add_argument("--disable-gpu")
         chrome_options.add_experimental_option("excludeSwitches", ['enable-automation']);
-
         driver = Chrome(options=chrome_options, executable_path=path)
     elif browser == 'firefox':
         driver = Firefox()
