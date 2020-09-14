@@ -14,6 +14,8 @@ def setup(browser):
         chrome_options.add_argument('--ignore-certificate-errors')
         chrome_options.add_argument("--test-type")
         chrome_options.add_experimental_option("useAutomationExtension", False);
+        chrome_options.add_experimental_option('prefs', {'credentials_enable_service': False, 'profile':
+                                                {'password_manager_enabled': False}})
         # chrome_options.add_argument("--disable-dev-shm-usage")
         # chrome_options.add_argument("--disable-gpu")
         chrome_options.add_experimental_option("excludeSwitches", ['enable-automation']);
