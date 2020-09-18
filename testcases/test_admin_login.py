@@ -8,10 +8,11 @@ class Test001Login:
 
     logger = Logger.get_logger()
 
-    @pytest.mark.skip()
-    def test_home_page_title(self, setup):
+    @pytest.mark.regression
+    def test_home_page_title(self, setup, login_test_data):
         self.logger.info("**************" + Test001Login.__name__ + "*************")
         self.logger.info("************** Verify Home Page title *************")
+        data = login_test_data
         self.login_page = LoginPage(setup)
         title = self.login_page.get_login_page_title()
         if title == 'Your store. Login':
@@ -22,6 +23,7 @@ class Test001Login:
             self.logger.error("************** Verify Home Page title test failed*************")
             assert False
 
+    @pytest.mark.sanity
     def test_login(self, setup):
         self.logger.info("**************" + Test001Login.__name__ + "*************")
         self.logger.info("************** Verify Login test *************")

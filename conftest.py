@@ -1,7 +1,9 @@
 from selenium.webdriver import Chrome, Firefox
 from selenium.webdriver.chrome.options import Options
-import pytest, sys
+import pytest, sys, openpyxl
 import os,pathlib
+from utilities.read_config import ConfigParser
+#login_data_file_path = "C:\Old D drive\SeleniumWorkSpace\nop_commerce_pytest_framework\testdata\LoginData.xlsx"
 
 
 @pytest.fixture()
@@ -52,3 +54,9 @@ def pytest_configure(config):
 def pytest_metadata(metadata):
     metadata.pop("JAVA_HOME", None)
     metadata.pop('Plugins', None)
+
+# @pytest.fixture(params=ConfigParser.load_excel_data(ConfigParser.get_test_data_file_path(), 'login_data_sheet'))
+# def login_test_data(request):
+#     data = request.param
+#     return data
+

@@ -17,4 +17,7 @@ class ConfigParser:
     def get_password():
         return config.get('login info', 'password')
 
+    @staticmethod
+    def get_test_data_file_path():
+        return config.get('testdata', 'login_data_file_path')
 
