@@ -1,4 +1,5 @@
 import configparser
+import os
 
 config = configparser.RawConfigParser()
 path = os.path.join(pathlib.Path(__file__).parent.parent.absolute(), "configurations", "config.ini")
