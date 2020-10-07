@@ -1,7 +1,9 @@
 import configparser
 
 config = configparser.RawConfigParser()
-config.read("C://Old D drive//SeleniumWorkSpace//nop_commerce_pytest_framework//configurations//config.ini")
+path = os.path.join(pathlib.Path(__file__).parent.parent.absolute(), "configurations", "config.ini")
+#config.read("C://Old D drive//SeleniumWorkSpace//nop_commerce_pytest_framework//configurations//config.ini")
+config.read(path)
 
 
 class ConfigParser:
