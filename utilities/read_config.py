@@ -21,5 +21,6 @@ class ConfigParser:
 
     @staticmethod
     def get_test_data_file_path():
-        return config.get('testdata', 'login_data_file_path')
+        path = pathlib.Path(__file__).parent.parent.absolute()
+        return os.path.join(path, config.get('testdata', 'login_data_file_path'))
 
